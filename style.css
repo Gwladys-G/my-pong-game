@@ -9,17 +9,17 @@ body{
 
 .paddle {
   position: absolute;
-  border: 2px solid blue;
+  background-color:  blue;
 
 
 }
 
-.paddle-left {
+.paddle.left {
   border: 2px solid red;
   left: 1vw;
 }
 
-.paddle-right {
+.paddle.right {
   border: 2px solid green;
   right: 1vw;
 
