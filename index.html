@@ -7,11 +7,30 @@
   <title>My Pong Game</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/9dc486b817.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="score">
     <div id="player-score">0</div>
     <div id="computer-score">0</div>
+  </div>
+  <i class="fa-solid fa-gear" id="wheel"></i>
+  <div class = "settings hide" id="setting">
+    <div class="speed">
+      <label for="ball-speed"> Ball speed </label>
+      <input type="range" name="ball-speed">
+    </div>
+    <div class="size">
+      <label for="ball-speed"> Your Paddle size</label>
+      <input type="number" name="paddle-size">
+    </div>
+    <div class="control-type">
+      <p>Controls</p>
+        <input type="radio" id="mouse" name="controls" value="mouse">
+        <label for="mouse">Mouse</label><br>
+        <input type="radio" id="arrows" name="controls" value="arrows">
+        <label for="arrows">CSS</label><br>
+    </div>
   </div>
   <div class="ball" id="ball"></div>
   <div class="paddle left" id="player-paddle"></div>

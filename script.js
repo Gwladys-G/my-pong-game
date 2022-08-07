@@ -6,6 +6,8 @@ const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
+const gameWheel = document.getElementById("wheel")
+
 
 let lastTime
 function update(time){
@@ -42,4 +44,15 @@ function handleLose(){
   ball.reset()
   computerPaddle.reset()
 }
+
+
+
+gameWheel.addEventListener("click", showSettings)
+
+function showSettings(){
+  const windowSettings = document.getElementById("setting")
+  windowSettings.classList.toggle("hide")
+}
+
+
 window.requestAnimationFrame(update)
