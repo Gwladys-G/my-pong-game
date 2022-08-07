@@ -20,18 +20,21 @@ body{
   position: absolute;
   background-color: var(--foreground-color);
   width: 1vh;
-  height: 10vh;
   top: calc(var(--position)*1vh);
   transform: translateY(-50%);
 
 }
 
 .paddle.left {
+  --size: 10;
   left: 1vw;
+  height: calc(var(--size)*1vh);
+
 }
 
 .paddle.right {
   right: 1vw;
+  height: 10vh;
 }
 
 .ball {
@@ -98,20 +101,24 @@ body{
   align-items: center;
 }
 
+#options{
+display: flex;
+justify-content: center;
+}
 
-#wheel {
+#wheel, #reset{
   display: flex;
   justify-content: center;
   justify-items: center;
   font-weight: bold;
   font-size: 4vh;
-  margin-top: 15px;
+  margin: 15px;
   color: var(--foreground-color);
   opacity: .5;
 
 }
 
-#wheel:hover{
+#wheel:hover, #reset:hover{
   opacity: 1;
   cursor: grab;
 }

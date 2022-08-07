@@ -7,6 +7,8 @@ const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
 const gameWheel = document.getElementById("wheel")
+const scoreReset = document.getElementById("reset")
+const paddleSize = document.getElementById("paddleSize")
 
 
 let lastTime
@@ -29,6 +31,11 @@ document.addEventListener("mousemove", (e) => {
   playerPaddle.position = e.y / window.innerHeight * 100
 })
 
+gameWheel.addEventListener("click", showSettings)
+scoreReset.addEventListener("click", resetScore)
+paddleSize.addEventListener("change", (e) => {resizePaddle(e)})
+
+
 function isLose(){
   const rect = ball.rect();
   return (rect.right >= window.innerWidth || rect.left <= 0)
@@ -46,12 +53,19 @@ function handleLose(){
 }
 
 
-
-gameWheel.addEventListener("click", showSettings)
-
 function showSettings(){
   const windowSettings = document.getElementById("setting")
   windowSettings.classList.toggle("hide")
+}
+
+
+function resetScore(){
+  playerScoreElem.innerText = 0
+  computerScoreElem.innerText = 0
+}
+
+function resizePaddle(e) {
+  document.getElementById("player-paddle").style.setProperty("--size", (e.target.value))
 }
 
 
