@@ -72,38 +72,10 @@ body{
   border-right: .5vh solid var(--foreground-color);
 }
 
-.settings{
-  border: 2px solid red;
-  background-color: pink;
-  display: block;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 4vh;
-  padding: 5px;
-
-
-}
-
-.speed{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.size{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 #options{
 display: flex;
 justify-content: center;
+align-content: center;
 }
 
 #wheel, #reset{
@@ -118,11 +90,65 @@ justify-content: center;
 
 }
 
-#wheel:hover, #reset:hover{
+#wheel:hover, #reset:hover, #closing::before{
   opacity: 1;
   cursor: grab;
 }
 
 .hide {
   display: none;
+}
+
+
+.settings{
+  border: 2px solid #EEE8D5;
+  background-color: #c2b591;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 3vh;
+  padding: 5px;
+  color: #4f4c43
+
+}
+
+#closing{
+  text-align: end;
+}
+
+
+.size{
+display: flex;
+justify-content: center;
+
+}
+
+.control-type{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.choices{
+  display: flex;
+  flex-direction: column;
+}
+
+hr{
+  border: .3px solid #EEE8D5;
+  width: 35vw;
+  margin-top: 21px;
+}
+
+label{
+  margin-right: 10px;
+}
+
+input[type='number']{
+  width: 8vh;
+  height: 4vh;
 }

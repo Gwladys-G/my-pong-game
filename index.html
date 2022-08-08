@@ -18,17 +18,27 @@
     <i class="fa-solid fa-gear" id="wheel"></i>
     <i class="fa-solid fa-arrows-rotate" id="reset"></i>
   </div>
-  <div class = "settings hide" id="setting">
-    <div class="size">
-      <label for="paddle-size"> Your Paddle size</label>
-      <input type="number" name="paddle-size" id="paddleSize" value="10">
-    </div>
-    <div class="control-type">
-      <p>Controls</p>
-        <input type="radio" id="mouse" name="controls" value="mouse" checked="checked">
-        <label for="mouse">Mouse</label><br>
-        <input type="radio" id="arrows" name="controls" value="arrows">
-        <label for="Arrows">arrows</label><br>
+  <div class="tohide hide">
+    <div class = "settings">
+      <i class="fa-solid fa-xmark" id="closing"></i>
+      <div class="size">
+        <label for="paddle-size"> Your Paddle size</label>
+        <input type="number" name="paddle-size" id="paddleSize" value="10">
+      </div>
+      <hr>
+      <div class="control-type">
+        <p>Controls</p>
+        <div id="choices">
+          <div >
+            <input type="radio" id="mouse" name="controls" value="mouse" checked="true">
+            <label for="mouse"><i class="fa-solid fa-arrow-pointer"></i></label>
+          </div>
+          <div>
+            <input type="radio" id="arrows" name="controls" value="arrows">
+            <label for="arrows"><i class="fa-solid fa-up-down"></i></label>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="ball" id="ball"></div>

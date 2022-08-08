@@ -9,9 +9,13 @@ const computerScoreElem = document.getElementById("computer-score")
 const gameWheel = document.getElementById("wheel")
 const scoreReset = document.getElementById("reset")
 const paddleSize = document.getElementById("paddleSize")
+const gameControls = document.querySelectorAll("input[type=radio]")
+const closeCross = document.getElementById("closing")
 
 
 let lastTime
+let isMouseControled = true
+
 function update(time){
   if (lastTime != null){
     const delta = time - lastTime
@@ -28,12 +32,27 @@ function update(time){
 }
 
 document.addEventListener("mousemove", (e) => {
+  if (!isMouseControled) return
   playerPaddle.position = e.y / window.innerHeight * 100
+ })
+
+document.addEventListener("keydown", (e) => {
+  if (isMouseControled) return
+  if (e.key === "ArrowUp"){
+    if(playerPaddle.position <= 0) return
+    playerPaddle.position = playerPaddle.position - 4,5
+  } else if ((e.key === "ArrowDown")){
+    if(playerPaddle.position >= 100) return
+    playerPaddle.position = playerPaddle.position + 4,5
+  }
 })
 
+
 gameWheel.addEventListener("click", showSettings)
+closeCross.addEventListener("click", closeSettings)
 scoreReset.addEventListener("click", resetScore)
 paddleSize.addEventListener("change", (e) => {resizePaddle(e)})
+gameControls.forEach(radio => radio.addEventListener('change', (e) => updateControls(e)));
 
 
 function isLose(){
@@ -54,12 +73,18 @@ function handleLose(){
 
 
 function showSettings(){
-  const windowSettings = document.getElementById("setting")
-  windowSettings.classList.toggle("hide")
+  const windowSettings = document.getElementsByClassName("tohide")
+  windowSettings[0].classList.toggle("hide")
 }
 
+function closeSettings(){
+  const windowSettings = document.getElementsByClassName("tohide")
+  windowSettings[0].classList.add("hide")
+}
 
 function resetScore(){
+  ball.reset()
+  computerPaddle.reset()
   playerScoreElem.innerText = 0
   computerScoreElem.innerText = 0
 }
@@ -68,5 +93,11 @@ function resizePaddle(e) {
   document.getElementById("player-paddle").style.setProperty("--size", (e.target.value))
 }
 
-
+function updateControls(e){
+  if (e.target.value === "mouse"){
+    isMouseControled = true
+   } else if (e.target.value === "arrows"){
+     isMouseControled = false
+   }
+}
 window.requestAnimationFrame(update)
