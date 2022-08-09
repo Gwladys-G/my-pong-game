@@ -12,6 +12,7 @@ body{
   margin: 0;
   background-color: var(--background-color);
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .paddle {
@@ -90,7 +91,7 @@ align-content: center;
 
 }
 
-#wheel:hover, #reset:hover, #closing::before{
+#wheel:hover, #reset:hover{
   opacity: 1;
   cursor: grab;
 }
@@ -112,14 +113,22 @@ align-content: center;
   flex-direction: column;
   font-size: 3vh;
   padding: 5px;
-  color: #4f4c43
+  color: #4f4c43;
+  padding-top: 23px;
+  position: relative;
 
 }
 
 #closing{
-  text-align: end;
+  position: absolute;
+  padding: 4px;
+  top: 1px;
+  right: 1px;
 }
 
+#closing:hover{
+background-color: #d0c5a6;
+}
 
 .size{
 display: flex;

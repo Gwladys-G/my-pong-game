@@ -100,4 +100,5 @@ function updateControls(e){
      isMouseControled = false
    }
 }
+
 window.requestAnimationFrame(update)
