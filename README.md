@@ -7,3 +7,7 @@ A simple Pong Game built using **Javascript Vanilla** and **CSS**.
 * Reset option
 * Set Paddle sizing
 * Set controls preferences
+
+
+
+[Let's play!](https://gwladys-g.github.io/my-pong-game/)
